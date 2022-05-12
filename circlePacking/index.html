@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>JavaScript Circle Packing Chart</title>
+
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-circle-packing.min.js"></script>
+    <!-- need this for original chart-->
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-data-adapter.min.js"></script>
+
+    <style type="text/css">     
+      html, body, #container { 
+        width: 100%; 
+        height: 100%; 
+        margin: 0; 
+        padding: 0; 
+      } 
+    </style>
+
+  </head>
+
+  <body>
+    <div id="container"></div>
+    <script>
+        //link: https://levelup.gitconnected.com/how-to-create-a-circle-packing-chart-using-javascript-6771648882cc
+        /*// All the code for the JS Circle Packing Chart will come here
+        anychart.onDocumentReady(function () {
+        anychart.data.loadJsonFile( 'https://gist.githubusercontent.com/shacheeswadia/17dc3b3d4ac9b63ac5ac6833944f3a94/raw/07c4bec103d22ec2824453a33d41868fd476db3d/dataPackedCircles.json',
+            function(data) {
+            //need this for graph to show 
+            var treeData = anychart.data.tree(data, 'as-table');
+            //need this for graph to show too
+            var chart = anychart.circlePacking(treeData);
+            
+            // title of the chart
+            chart.title("Top 100 most streamed songs on Spotify by genre")
+            
+            chart.container('container');
+            chart.draw();
+            
+            });
+        });*/
+
+        //link: https://docs.anychart.com/Basic_Charts/Circle_Packing_Chart
+        // create data
+        //this is an array of info contained by {}
+
+        /*
+        //shows big circles behid everything
+        var data = [
+            {name: "Slavic Languages", children: [
+
+                {name: "East Slavic", children: [
+                    {name: "Russian",        value: 150000000},
+                    {name: "Ukrainian",      value:  45000000},
+                    {name: "Belarusian",     value:   3200000}
+                ]},
+                {name: "West Slavic", children: [
+                    {name: "Polish",         value:  55000000},
+                    {name: "Czech",          value:  10600000},
+                    {name: "Slovak",         value:   5200000}
+                ]},
+                {name: "South Slavic", children: [
+                    {name: "Serbo-Croatian", value:  21000000},
+                    {name: "Bulgarian",      value:   9000000},
+                    {name: "Slovene",        value:   2500000},
+                    {name: "Macedonian",     value:   1400000}
+                ]} 
+
+            ]} 
+        ];*/
+
+        //shows data withour big background ciecle
+        var data = [
+        
+            {name: "East Slavic", children: [
+                {name: "Russian",        value: 150000000},
+                {name: "Ukrainian",      value:  45000000},
+                {name: "Belarusian",     value:   3200000}
+            ]},
+            {name: "West Slavic", children: [
+                {name: "Polish",         value:  55000000},
+                {name: "Czech",          value:  10600000},
+                {name: "Slovak",         value:   5200000}
+            ]},
+            {name: "South Slavic", children: [
+                {name: "Serbo-Croatian", value:  21000000},
+                {name: "Bulgarian",      value:   9000000},
+                {name: "Slovene",        value:   2500000},
+                {name: "Macedonian",     value:   1400000}
+            ]} 
+ 
+        ];
+
+        var data = [
+        
+            
+            
+                {name: "Serbo-Croatian", value:  0.5},
+                {name: "Bulgarian",      value:   0.03},
+                {name: "Slovene",        value:   0.04},
+                {name: "Macedonian",     value:   0.3}
+            
+ 
+        ];
+
+        // create a chart and set the data
+        chart = anychart.circlePacking(data, "as-tree");
+
+        // set the container id
+        chart.container("container");
+
+        // initiate drawing the chart
+        chart.draw();
+    </script>
+  </body>
+
+</html>
